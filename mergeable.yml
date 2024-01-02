@@ -1,0 +1,25 @@
+# Requires 2 approvers, one from Product Owners and one from Developers
+version: 2
+mergeable:
+  - when: pull_request.*, pull_request_review.*
+    name: 'Approval check'
+    validate:
+      - do: approvals
+        min:
+          count: 1
+        limit:
+          # users: [ 'approverA', 'approverB' ]
+          teams: [ 'Product Owners']
+
+version: 2
+mergeable:
+- when: pull_request.*, pull_request_review.*
+  name: 'Approval check'
+  validate:
+    - do: approvals
+      min:
+        count: 2
+      limit:
+        # users: [ 'approverA', 'approverB' ]
+        teams: [ 'Developers']
+          
