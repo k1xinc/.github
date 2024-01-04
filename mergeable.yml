@@ -1,4 +1,5 @@
-# Requires 2 approvers, one from Product Owners and one from Developers
+# Requires 2 approvers, one from Product Owners and one from Developers 
+# Test for rules
 version: 2
 mergeable:
   - when: pull_request.*, pull_request_review.*
@@ -8,8 +9,8 @@ mergeable:
         min:
           count: 1
         limit:
-          # users: [ 'approverA', 'approverB' ]
-          teams: [ 'Product Owners']
+          users: [ 'cpenner31' ]
+          
 
 version: 2
 mergeable:
